@@ -1,12 +1,19 @@
 <template>
   <div id="app">
+    <MainNavigation></MainNavigation>
+    <HeaderImage></HeaderImage>
+    <VideoPlayer></VideoPlayer>
     {{msg}}
   </div>
 </template>
 
 <script>
+import MainNavigation from "./assets/components/main-navigation";
+import HeaderImage from "./assets/components/header-image";
+import VideoPlayer from "./assets/components/video-player";
 export default {
   name: 'app',
+  components: {VideoPlayer, HeaderImage, MainNavigation},
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
