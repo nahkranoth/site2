@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Heroic-Bold";
+  src: url('assets/fonts/heroiccondensed-bold-webfont.ttf');
+}
+@font-face {
+  font-family: "Heroic-Heavy";
+  src: url('assets/fonts/heroiccondensed-heavy-webfont.ttf');
+}
+@font-face {
+  font-family: "Gill-Sans";
+  src: url('assets/fonts/GillSans.otf');
+}
+@font-face {
+  font-family: "Gill-Sans-Medium";
+  src: url('assets/fonts/GillSansMedium.otf');
+}
+@font-face {
+  font-family: "Caslon";
+  src: url('assets/fonts/Caslon450Italic.ttf');
+}
+
+.heroic-b{
+  font-family: "Heroic-Black";
+}
+
+.heroic-h{
+  font-family: "Heroic-Heavy";
+}
+
+.gill-sans{
+  font-family: "Gill-Sans";
+}
+
+.gill-sans-m{
+  font-family: "Gill-Sans-Medium";
+}
+
+.caslon{
+  font-family: "Caslon";
+}
