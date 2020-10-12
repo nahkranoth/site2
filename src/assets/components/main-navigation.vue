@@ -1,7 +1,7 @@
 <template>
   <div class="container steel-blue">
     <div class="top content-width">
-      <span class="customer-menu gill-sans-m">
+      <span class="menu customer gill-sans-m">
         <span class="item heroic-bl">{{ $t("currency") }}</span>
         <span class="horizontal-line"></span>
         <span class="item heroic-bl">{{ $t("stores") }}</span>
@@ -11,12 +11,12 @@
 
       <span class="pay-off caslon">{{ $t("pay_off") }}</span>
 
-      <span class="user-menu gill-sans-m">
+      <span class="menu user gill-sans-m">
         <span class="item">{{ $t("newsletter") }}</span>
         <span class="horizontal-line"></span>
         <span class="item">{{ $t("sign_in") }}</span>
         <span class="horizontal-line special"></span>
-        <span class="shopping-cart-button">img</span>
+        <span class="item"><span class="shopping-cart-button">img</span></span>
       </span>
     </div>
 
@@ -61,17 +61,19 @@
   }
 
   .horizontal-line {
-    top:3px;
+
     position:relative;
     display:inline-block;
     width:1px;
     height:12px;
     background-color:#8088a3;
     margin: 0 5px 0 10px;
+    top:1px;
 
     &.special{
       background-color:#e6e6e6;
       height:25px;
+
     }
   }
 
@@ -87,34 +89,38 @@
       font-size:11px;
     }
 
-    .customer-menu{
-      margin-top: 9px;
-      align-self:flex-start;
-      margin-left: $side-margin;
+    .menu{
+      display:flex;
+      align-items:center;
       width:$top-menu-width;
+
+      &.customer{
+        margin-left: $side-margin;
+      }
+      &.user{
+        margin-right: $side-margin;
+        .horizontal-line{
+          margin-left: auto;
+          order: 2;
+        }
+        .item{
+          position:relative;
+          top:0;
+          margin-left: auto;
+          order: 2;
+        }
+      }
     }
 
     .pay-off{
       font-size:18px;
-    }
-
-    .user-menu{
-      display:flex;
-      align-items:center;
-
-      margin-right: $side-margin;
-      width:$top-menu-width;
-
-      .item{
-        position:relative;
-        top:0;
-      }
+      display: flex;
+      align-items: center;
     }
 
   }
 
   .bottom{
-
     display:flex;
     flex-direction: row;
     align-items: center;
