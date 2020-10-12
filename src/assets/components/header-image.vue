@@ -1,7 +1,7 @@
 <template>
   <div class="header-image">
-    <div class="image-container top"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
-    <div class="image-container bottom"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+    <div class="image-container top" ref="top_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+    <div class="image-container bottom" ref="bottom_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
   </div>
 </template>
 
@@ -10,9 +10,18 @@
 
   export default {
         name: "header-image",
+        mounted:function(){
+          this.fadeIn()
+        },
         methods: {
-          fade(){
-            gsap.fromTo(this.$refs.logo,{autoAlpha:1},{autoAlpha:0, duration: 0.35});
+          fadeIn(){
+            //Top
+            gsap.fromTo(this.$refs.top_fade,{autoAlpha:0},{autoAlpha:1, duration: 0.79});
+            gsap.fromTo(this.$refs.top_fade,{width:200},{width:920, duration: 0.79});
+
+            //Bottom
+            gsap.fromTo(this.$refs.bottom_fade,{autoAlpha:0},{autoAlpha:1, duration: 0.79 });
+            gsap.fromTo(this.$refs.bottom_fade,{width:300},{width:1101, duration: 0.79});
           }
         }
     }
