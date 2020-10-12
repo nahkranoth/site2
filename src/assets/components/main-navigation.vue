@@ -1,12 +1,12 @@
 <template>
   <div class="container steel-blue">
-    <div class="top content-width">
+    <div class="top">
       <span class="menu customer gill-sans-m">
-        <span class="item heroic-bl">{{ $t("currency") }}</span>
+        <span class="item currency heroic-bl">{{ $t("currency") }}</span>
         <span class="horizontal-line"></span>
-        <span class="item heroic-bl">{{ $t("stores") }}</span>
+        <span class="item stores heroic-bl">{{ $t("stores") }}</span>
         <span class="horizontal-line"></span>
-        <span class="item heroic-bl">{{ $t("customer")}}</span>
+        <span class="item customer heroic-bl">{{ $t("customer")}}</span>
       </span>
 
       <span class="pay-off caslon">{{ $t("pay_off") }}</span>
@@ -22,7 +22,7 @@
 
     <hr>
 
-    <div class="bottom content-width">
+    <div class="bottom">
       <span class="logo-container"><img class="logo" src="/src/assets/images/logo.png" alt=""></span>
       <span class="menu gill-sans-m">
         <span class="item">{{ $t("women") }}</span>
@@ -32,7 +32,7 @@
         <span class="item">{{ $t("sale") }}</span>
       </span>
       <span class="search gill-sans">
-        <span class="search-bar "><InputField></InputField></span>
+        <span class="search-input"><InputField></InputField></span>
         <span class="search-icon">img!</span>
       </span>
     </div>
@@ -57,11 +57,9 @@
 
   hr{
     border-top: 2px solid #e6e6e6;
-
   }
 
   .horizontal-line {
-
     position:relative;
     display:inline-block;
     width:1px;
@@ -73,7 +71,6 @@
     &.special{
       background-color:#e6e6e6;
       height:25px;
-
     }
   }
 
@@ -96,6 +93,19 @@
 
       &.customer{
         margin-left: $side-margin;
+        .item{
+          &.currency{
+            margin-right:5px;
+          }
+
+          &.stores{
+            margin-left:5px;
+          }
+
+          &.customer{
+
+          }
+        }
       }
       &.user{
         margin-right: $side-margin;
@@ -105,7 +115,6 @@
         }
         .item{
           position:relative;
-          top:0;
           margin-left: auto;
           order: 2;
         }
@@ -121,10 +130,11 @@
   }
 
   .bottom{
-    display:flex;
+    display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    max-width:$max-width;
+    margin: 0 auto;
 
     .logo-container{
       width:300px;
@@ -137,8 +147,8 @@
 
     .menu{
       width:350px;
-      display:flex;
-      flex-direction: row;
+      display: flex;
+      align-items: center;
       justify-content: space-around;
 
       .item {
@@ -148,8 +158,20 @@
 
     .search{
       width:300px;
-      text-align: right;
+      display: flex;
+      align-items: center;
       margin-right:$side-margin;
+      span{
+        position:relative;
+        margin-left: auto;
+        &.search-icon{
+          width: 58px;
+          text-align: right;
+        }
+        &.search-input{
+          text-align: right;
+        }
+      }
     }
 
   }
