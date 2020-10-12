@@ -15,8 +15,8 @@
         <span class="item">{{ $t("newsletter") }}</span>
         <span class="horizontal-line"></span>
         <span class="item">{{ $t("sign_in") }}</span>
-        <span class="horizontal-line-special"></span>
-        <span class="shopping-cart-button"></span>
+        <span class="horizontal-line special"></span>
+        <span class="shopping-cart-button">img</span>
       </span>
     </div>
 
@@ -32,24 +32,27 @@
         <span class="item">{{ $t("sale") }}</span>
       </span>
       <span class="search gill-sans">
-        <span class="search-bar ">{{ $t("search") }}</span>
+        <span class="search-bar "><InputField></InputField></span>
         <span class="search-icon">img!</span>
       </span>
     </div>
     <hr>
-
   </div>
 </template>
 
 <script>
-    export default {
-        name: "main-navigation"
+  import InputField from "./ui/input-field";
+
+
+  export default {
+        name: "main-navigation",
+        components:{InputField}
     }
 </script>
 
 <style scoped lang="scss">
   $side-margin: 14px;
-  $max-width: 1303px - ($side-margin*2);
+  $max-width: 1303px + ($side-margin*2);
   $top-menu-width:300px;
 
   hr{
@@ -65,6 +68,49 @@
     height:12px;
     background-color:#8088a3;
     margin: 0 5px 0 10px;
+
+    &.special{
+      background-color:#e6e6e6;
+      height:25px;
+    }
+  }
+
+  .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width:$max-width;
+    margin: 0 auto;
+    height:36px;
+
+    .item {
+      font-size:11px;
+    }
+
+    .customer-menu{
+      margin-top: 9px;
+      align-self:flex-start;
+      margin-left: $side-margin;
+      width:$top-menu-width;
+    }
+
+    .pay-off{
+      font-size:18px;
+    }
+
+    .user-menu{
+      display:flex;
+      align-items:center;
+
+      margin-right: $side-margin;
+      width:$top-menu-width;
+
+      .item{
+        position:relative;
+        top:0;
+      }
+    }
+
   }
 
   .bottom{
@@ -96,37 +142,8 @@
 
     .search{
       width:300px;
-    }
-
-  }
-
-  .top{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width:$max-width;
-    margin: 9px auto;
-
-    .item {
-      font-size:11px;
-    }
-
-    .customer-menu{
-      align-self:flex-start;
-      margin-left: $side-margin;
-      width:$top-menu-width;
-    }
-
-    .pay-off{
-      font-size:18px;
-    }
-
-    .user-menu{
-      align-self:flex-end;
-      margin-right: $side-margin;
-      width:$top-menu-width;
       text-align: right;
+      margin-right:$side-margin;
     }
 
   }

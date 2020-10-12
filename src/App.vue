@@ -9,7 +9,8 @@
 <script>
 import MainNavigation from "./assets/components/main-navigation";
 import HeaderImage from "./assets/components/header-image";
-import VideoPlayer from "./assets/components/video-player";
+import VideoPlayer from "./assets/components/ui/video-player";
+
 export default {
   name: 'app',
   components: {VideoPlayer, HeaderImage, MainNavigation},
