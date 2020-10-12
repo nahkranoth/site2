@@ -3,8 +3,15 @@
 </template>
 
 <script>
-    export default {
-        name: "header-image"
+  import { gsap } from "gsap";
+
+  export default {
+        name: "header-image",
+        methods: {
+          fade(){
+            gsap.fromTo(this.$refs.logo,{autoAlpha:1},{autoAlpha:0, duration: 0.35});
+          }
+        }
     }
 </script>
 
