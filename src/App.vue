@@ -24,11 +24,8 @@ export default {
 <style lang="scss">
   @import "./assets/styles/fonts";
   @import "./assets/styles/globals";
+  @import "./assets/styles/colors";
 
-  #app {
-    font-family: 'Heroic-Medium',Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+
 
 </style>
