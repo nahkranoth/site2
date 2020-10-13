@@ -1,8 +1,18 @@
 <template>
   <div id="app">
-    <MainNavigation></MainNavigation>
-    <HeaderImage></HeaderImage>
-    <VideoPlayer></VideoPlayer>
+
+    <div class="navigation-container">
+      <MainNavigation></MainNavigation>
+    </div>
+
+    <div class="header-container">
+      <HeaderImage></HeaderImage>
+    </div>
+
+    <div class="video-container">
+      <VideoPlayer></VideoPlayer>
+    </div>
+
   </div>
 </template>
 
@@ -27,6 +37,27 @@ export default {
   @import "./assets/styles/globals";
   @import "./assets/styles/colors";
 
+  $side-margin: 14px;
+  $max-width: 1303px + ($side-margin*2);
+  $header-image-x: 290px;
+  
+  .header-container{
+    max-width: $max-width;
+    margin: 30px auto 0 auto;
+
+    .header-image{
+      margin-left: $side-margin + $header-image-x;
+    }
+  }
+
+  .video-container{
+    max-width: $max-width;
+    margin: 0 auto;
+
+    .video-player{
+      margin-left: $side-margin;
+    }
+  }
 
 
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <video ref="videoPlayer" class="video-js"></video>
+  <div class="video-player">
+      <video ref="videoPlayer" class="video-js"></video>
   </div>
 </template>
 
@@ -10,19 +10,10 @@
 
   export default {
     name: "VideoPlayer",
-    props: {
-      options: {
-        type: Object,
-        default() {
-          return {};
-        }
-      }
-    },
     data() {
       return {
         playerOptions: {
           muted: true,
-          autoplay:true,
           language: 'en',
           controls: true,
           sources: [{
@@ -44,3 +35,6 @@
     }
   }
 </script>
+<style lang="scss">
+
+</style>

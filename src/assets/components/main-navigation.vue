@@ -42,8 +42,6 @@
 
 <script>
   import InputField from "./ui/input-field";
-
-
   export default {
         name: "main-navigation",
         components:{InputField}
