@@ -50,7 +50,7 @@
         gsap.to(this.$refs.circleBorder,{width:0, height:0, left:400, top:260, duration: 0.29});
         gsap.fromTo(this.$refs.circleFull,{width:0, height:0, left:400,top:260,},{width:80, height:80, left:400-40,top:260-40, duration:0.29});
 
-
+        //TODO: GlIDE in on the right scroll position
         gsap.to(this.$refs.greyBg,{left:0, duration:0.29});
 
         //start later

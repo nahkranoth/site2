@@ -17,6 +17,9 @@
       <span class="d-dot1" ref="ddot2">.</span>
 
     </div>
+
+    <div class="arm-overlay" ref="armOverlay"><img src="src/assets/images/armOVerlay.png" class="arm-overlay"></div>
+
   </div>
 </template>
 
@@ -30,6 +33,11 @@
         },
       methods: {
         fadeIn(){
+
+          gsap.fromTo(this.$refs.armOverlay,{autoAlpha:0},{autoAlpha:1, duration: 0.79});
+          
+
+
           //Top
           gsap.fromTo(this.$refs.tl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
           gsap.fromTo(this.$refs.heart,{top:60, autoAlpha:0},{top:30, autoAlpha:1, duration: 0.79});
@@ -47,6 +55,11 @@
 </script>
 
 <style scoped lang="scss">
+  .arm-overlay{
+    position:absolute;
+    left: 283px;
+    top: 30px;
+  }
 
   .animated-copy{
     font-size:455px;
