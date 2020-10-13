@@ -16,7 +16,7 @@
         <span class="horizontal-line"></span>
         <span class="item">{{ $t("sign_in") }}</span>
         <span class="horizontal-line special"></span>
-        <span class="item"><span class="shopping-cart-button">img</span></span>
+        <span class="item"><span class="shopping-cart-button"><img src="/src/assets/icons/shopping-cart.png" alt=""></span></span>
       </span>
     </div>
 
@@ -33,7 +33,7 @@
       </span>
       <span class="search gill-sans">
         <span class="search-input"><InputField></InputField></span>
-        <span class="search-icon">img!</span>
+        <span class="search-icon"><img src="/src/assets/icons/search.png" alt=""></span>
       </span>
     </div>
     <hr>
