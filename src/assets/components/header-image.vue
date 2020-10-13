@@ -21,7 +21,7 @@
 
             //Bottom
             gsap.fromTo(this.$refs.bottom_fade,{autoAlpha:0},{autoAlpha:1, duration: 0.79 });
-            gsap.fromTo(this.$refs.bottom_fade,{width:300},{width:1101, duration: 0.79});
+            gsap.fromTo(this.$refs.bottom_fade,{width:300},{width:1012, duration: 0.79});
           }
         }
     }
@@ -30,6 +30,7 @@
 <style scoped lang="scss">
   .image-container{
     overflow:hidden;
+
     &.top{
       width:200px;
       height:400px;

@@ -40,13 +40,14 @@ export default {
   $side-margin: 14px;
   $max-width: 1303px + ($side-margin*2);
   $header-image-x: 290px;
-  
+
   .header-container{
     max-width: $max-width;
     margin: 30px auto 0 auto;
 
     .header-image{
-      margin-left: $side-margin + $header-image-x;
+      width: 1012px + $side-margin;
+      margin: 0 0 0 auto;
     }
   }
 
