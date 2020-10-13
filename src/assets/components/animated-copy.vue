@@ -6,8 +6,8 @@
       <span class="t-ve" ref="tve">V E</span>
       <span class="t-dot" ref="tdot">.</span>
     </div>
-    <img class="heart-icon" ref="heart" src="src/assets/icons/heart.svg" alt="">
-
+    <img class="heart-icon" v-bind:class="{ active: heartFlicker }" ref="heart" src="src/assets/icons/heart_red.svg" alt="">
+    <img class="heart-icon blue" v-bind:class="{ active: !heartFlicker }" src="src/assets/icons/heart_blue.svg" alt="">
 
     <div class="bottom heroic-h th-red">
 
@@ -31,7 +31,11 @@
       mounted:function(){
         this.fadeIn()
       },
-      props: ['tl'],
+      data () {
+        return {
+          heartFlicker: true
+        }
+      },
       methods: {
         fadeIn(){
           var tl = gsap.timeline();
@@ -50,11 +54,23 @@
           tl.fromTo(this.$refs.dl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.8}, "-=0.7");
           tl.fromTo(this.$refs.ddotl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.8}, "-=0.7");
 
-          tl.to(this.$refs.heart,{left:180, duration: 0.05});
-          tl.to(this.$refs.heart,{left:140, duration: 0.05});
+          tl.call(()=>{ this.heartFlicker = false });
+          tl.set(this.$refs.heart, {opacity:0});
+          tl.call(()=>{ this.heartFlicker = true }, [], "+=.08");
+          tl.set(this.$refs.heart, {opacity:1});
 
           tl.fromTo(this.$refs.da,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: .8}, "-=0.7");
           tl.fromTo(this.$refs.ddot2,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: .8}, "-=0.5");
+
+          tl.call(()=>{ this.heartFlicker = false }, [], "+=1");
+          tl.set(this.$refs.heart, {opacity:0});
+          tl.call(()=>{ this.heartFlicker = true }, [], "+=.08");
+          tl.set(this.$refs.heart, {opacity:1});
+
+          tl.call(()=>{ this.heartFlicker = false }, [], "+=.1");
+          tl.set(this.$refs.heart, {opacity:0});
+          tl.call(()=>{ this.heartFlicker = true }, [], "+=.08");
+          tl.set(this.$refs.heart, {opacity:1});
 
         }
       }
@@ -101,6 +117,15 @@
     width: 385px;
     margin-right: 75px;
     opacity:0;
+
+    &.blue{
+      top:30px;
+      left:160px;
+      opacity:0;
+    }
+    &.active{
+      opacity:1;
+    }
   }
 
   .bottom{
