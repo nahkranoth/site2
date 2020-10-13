@@ -1,7 +1,9 @@
 <template>
   <div class="header-image">
-    <div class="image-container top" ref="top_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
-    <div class="image-container bottom" ref="bottom_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+    <div class="header-container">
+      <div class="image-container top" ref="top_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+      <div class="image-container bottom" ref="bottom_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +32,11 @@
 <style scoped lang="scss">
   $side-margin: 14px;
   $max-width: 1303px + ($side-margin*2);
+
+  .header-container{
+    max-width: $max-width;
+    margin: 0 auto;
+  }
 
   .image-container{
     overflow:hidden;
