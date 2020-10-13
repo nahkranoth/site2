@@ -1,15 +1,17 @@
 <template>
   <div class="static-copy">
-    <span class="live heroic-h th-red">24/7 LIVE.</span>
+    <div class="live-container">
+      <span class="live heroic-h th-red" ref="liveTime">{{$t("liveTime")}}</span>
+    </div>
     <div class="all-products">
 
-      <div class="spring heroic-h th-blue">SPRING</div>
-      <span class="year heroic-h th-red">2017</span>
+      <div class="spring heroic-h th-blue">{{$t("spring")}}</div>
+      <span class="year heroic-h th-red">{{$t("year")}}</span>
 
-      <div class="name-top heroic-b th-blue">WITH ANWAR HADIO</div>
-      <span class="name-bottom heroic-b th-blue">& SOPHIA RICHIE</span>
+      <div class="name-top heroic-b th-blue">{{$t("name1")}}</div>
+      <span class="name-bottom heroic-b th-blue">{{$t("name2")}}</span>
 
-      <div class="content gill-sans th-blue">Engineered for perfect form and exceptional fit – whatever you do in them.</div>
+      <div class="content gill-sans th-blue">{{$t("engineer_copy")}}</div>
 
       <div class="button">
         <CustomButton></CustomButton>
@@ -20,17 +22,25 @@
 </template>
 
 <script>
-    import CustomButton from "./ui/custom-button"
-    export default {
-      name: "text-overlay",
-      components:{CustomButton}
+  import { gsap } from "gsap";
+  import CustomButton from "./ui/custom-button"
+  export default {
+    name: "text-overlay",
+    components:{CustomButton},
+    mounted(){
+      gsap.to(this.$refs.liveTime, {top:0, duration:1})
     }
+  }
 </script>
 
 <style scoped lang="scss">
-
-    .live{
-      font-size:30px;
+    .live-container{
+      overflow: hidden;
+      .live{
+        font-size:30px;
+        top: 100px;
+        position: relative;
+      }
     }
 
     .spring{

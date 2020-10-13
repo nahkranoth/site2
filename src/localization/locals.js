@@ -11,7 +11,13 @@ export default {
     kids:"KIDS",
     labels:"LABELS",
     sale:"SALE",
-    search:"Search"
+    search:"Search",
+    liveTime:"24/7 LIVE.",
+    spring:"SPRING",
+    year:"2017",
+    name1:"WITH ANWAR HADIO",
+    name2:"& SOPHIA RICHIE",
+    engineer_copy:"Engineered for perfect form and exceptional fit – whatever you do in them."
   },
   nl: {
     currency:"EU (€)",
