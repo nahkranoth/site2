@@ -34,7 +34,7 @@ import HeaderImage from "./assets/components/header-image";
 import VideoPlayer from "./assets/components/ui/video-player";
 import StaticCopy from "./assets/components/static-copy";
 import AnimatedCopy from "./assets/components/animated-copy";
-
+import ScrollBehavior from './scripts/scrollBehavior'
 export default {
   name: 'app',
   components: {VideoPlayer, HeaderImage, MainNavigation, StaticCopy, AnimatedCopy},
@@ -42,6 +42,16 @@ export default {
     return {
 
     }
+  },
+  methods:{
+    scrollCallback(direction){
+      if(direction){
+        console.log("scroll: "+direction);
+      }
+    }
+  },
+  mounted(){
+    new ScrollBehavior(this.scrollCallback);
   }
 }
 </script>
