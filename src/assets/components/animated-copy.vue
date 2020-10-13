@@ -14,7 +14,7 @@
       <span class="d-l" ref="dl">L</span>
       <span class="d-dot1" ref="ddotl">.</span>
       <span class="d-a" ref="da">A</span>
-      <span class="d-dot1" ref="ddot2">.</span>
+      <span class="d-dot2" ref="ddot2">.</span>
 
     </div>
 
@@ -27,28 +27,35 @@
   import { gsap } from "gsap";
 
     export default {
-        name: "text-animation",
-        mounted:function(){
-          this.fadeIn()
-        },
+      name: "text-animation",
+      mounted:function(){
+        this.fadeIn()
+      },
+      props: ['tl'],
       methods: {
         fadeIn(){
+          var tl = gsap.timeline();
 
-          gsap.fromTo(this.$refs.armOverlay,{autoAlpha:0},{autoAlpha:1, duration: 0.79});
-          
-
+          tl.fromTo(this.$refs.armOverlay,{autoAlpha:0},{autoAlpha:1, ease: "power4.out", duration: 0.7}, .5);
 
           //Top
-          gsap.fromTo(this.$refs.tl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.heart,{top:60, autoAlpha:0},{top:30, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.tve,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.tdot,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
+          tl.fromTo(this.$refs.tl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, ease: "power4.out", duration: 0.8}, "-=0.2");
 
+          tl.fromTo(this.$refs.heart,{autoAlpha:0},{autoAlpha:1, duration: 0.01}, "-=0.7");
+          tl.fromTo(this.$refs.heart,{top:120},{top:30, duration: 0.8}, "-=0.7");
+
+          tl.fromTo(this.$refs.tve,{top:60, autoAlpha:0},{top:0, autoAlpha:1, ease: "power4.out", duration: 0.8}, "-=0.7");
+          tl.fromTo(this.$refs.tdot,{top:60, autoAlpha:0},{top:0, autoAlpha:1, ease: "power4.out", duration: 0.8}, "-=0.7");
           //Bottom
-          gsap.fromTo(this.$refs.dl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.ddot1,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.da,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
-          gsap.fromTo(this.$refs.ddot2,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.79});
+          tl.fromTo(this.$refs.dl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.8}, "-=0.7");
+          tl.fromTo(this.$refs.ddotl,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: 0.8}, "-=0.7");
+
+          tl.to(this.$refs.heart,{left:180, duration: 0.05});
+          tl.to(this.$refs.heart,{left:140, duration: 0.05});
+
+          tl.fromTo(this.$refs.da,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: .8}, "-=0.7");
+          tl.fromTo(this.$refs.ddot2,{top:60, autoAlpha:0},{top:0, autoAlpha:1, duration: .8}, "-=0.5");
+
         }
       }
     }
@@ -93,6 +100,7 @@
     left: 140px;
     width: 385px;
     margin-right: 75px;
+    opacity:0;
   }
 
   .bottom{
@@ -103,6 +111,7 @@
     span{
       position:relative;
     }
+
   }
 
 </style>

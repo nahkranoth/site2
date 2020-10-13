@@ -15,13 +15,14 @@
         },
         methods: {
           fadeIn(){
+            var tl = gsap.timeline();
             //Top
-            gsap.fromTo(this.$refs.top_fade,{autoAlpha:0},{autoAlpha:1, duration: 0.79});
-            gsap.fromTo(this.$refs.top_fade,{width:200},{width:920, duration: 0.79});
+            tl.fromTo(this.$refs.top_fade,{autoAlpha:0},{autoAlpha:1, ease: "power4.out", duration: 0.7}, .5);
+            tl.fromTo(this.$refs.top_fade,{width:200},{width:920, ease: "power4.out", duration: 0.6}, .5);
 
             //Bottom
-            gsap.fromTo(this.$refs.bottom_fade,{autoAlpha:0},{autoAlpha:1, duration: 0.79 });
-            gsap.fromTo(this.$refs.bottom_fade,{width:300},{width:1012, duration: 0.79});
+            tl.fromTo(this.$refs.bottom_fade,{autoAlpha:0},{autoAlpha:1, ease: "power4.out", duration: 0.7 }, .5);
+            tl.fromTo(this.$refs.bottom_fade,{width:300},{width:1012, ease: "power4.out", duration: 0.4}, .5);
           }
         }
     }
