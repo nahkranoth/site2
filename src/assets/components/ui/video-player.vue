@@ -16,6 +16,8 @@
           muted: true,
           language: 'en',
           controls: true,
+          width:800,
+          height:520,
           sources: [{
             type: "video/mp4",
             src: "/src/assets/videos/test-video.mp4"

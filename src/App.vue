@@ -39,7 +39,7 @@ export default {
 
   $side-margin: 14px;
   $max-width: 1303px + ($side-margin*2);
-  $header-image-x: 290px;
+  $video-player-x: 90px;
 
   .header-container{
     max-width: $max-width;
@@ -53,10 +53,12 @@ export default {
 
   .video-container{
     max-width: $max-width;
-    margin: 0 auto;
+    margin: 0 auto 300px auto;
 
     .video-player{
-      margin-left: $side-margin;
+      position:relative;
+      top:-35px;
+      margin-left: $side-margin + $video-player-x;
     }
   }
 
