@@ -1,10 +1,10 @@
 <template>
-  <span class="button">VIEW ALL PRODUCTS</span>
+  <span class="custom-btn">VIEW ALL PRODUCTS</span>
 </template>
 
 <script>
     export default {
-        name: "button"
+        name: "custom-btn"
     }
 </script>
 

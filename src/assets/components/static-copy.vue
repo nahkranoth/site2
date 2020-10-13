@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import CustomButton from "./ui/button"
+    import CustomButton from "./ui/custom-button"
     export default {
       name: "text-overlay",
       components:{CustomButton}
