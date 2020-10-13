@@ -1,5 +1,5 @@
 <template>
-  <div class="text-overlay">
+  <div class="static-copy">
     <span class="live heroic-h th-red">24/7 LIVE.</span>
     <div class="all-products">
 

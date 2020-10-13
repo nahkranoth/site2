@@ -7,8 +7,12 @@
 
     <div class="header-wrapper">
 
-      <div class="text-overlay-container">
-        <TextOverlay></TextOverlay>
+      <div class="static-copy-container">
+        <StaticCopy></StaticCopy>
+      </div>
+
+      <div class="animated-copy-container">
+        <AnimatedCopy></AnimatedCopy>
       </div>
 
       <div class="header-container">
@@ -28,12 +32,12 @@
 import MainNavigation from "./assets/components/main-navigation";
 import HeaderImage from "./assets/components/header-image";
 import VideoPlayer from "./assets/components/ui/video-player";
-import TextOverlay from "./assets/components/text-overlay";
-import TextAnimation from "./assets/components/text-animation";
+import StaticCopy from "./assets/components/static-copy";
+import AnimatedCopy from "./assets/components/animated-copy";
 
 export default {
   name: 'app',
-  components: {VideoPlayer, HeaderImage, MainNavigation, TextOverlay, TextAnimation},
+  components: {VideoPlayer, HeaderImage, MainNavigation, StaticCopy, AnimatedCopy},
   data () {
     return {
 
@@ -58,7 +62,13 @@ export default {
     height:1094px;
   }
 
-  .text-overlay-container{
+  .animated-copy-container{
+    position:absolute;
+    margin: 188px 0 0 $side-margin;
+    z-index:2;
+  }
+
+  .static-copy-container{
     position:absolute;
     margin: 162px 0 0 $side-margin;
     z-index:2;
