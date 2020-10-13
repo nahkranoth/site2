@@ -13,20 +13,14 @@
 
       <div class="content gill-sans th-blue">{{$t("engineer_copy")}}</div>
 
-      <div class="button">
-        <CustomButton></CustomButton>
-      </div>
-
     </div>
   </div>
 </template>
 
 <script>
   import { gsap } from "gsap";
-  import CustomButton from "./ui/custom-button"
   export default {
     name: "text-overlay",
-    components:{CustomButton},
     mounted(){
       gsap.to(this.$refs.liveTime, {top:0, duration:1})
     }

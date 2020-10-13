@@ -1,17 +1,20 @@
 <template>
   <div class="video-player">
-      <video ref="videoPlayer" class="video-js"></video>
-      <div class="controls">
-        <div class="circle-border" ref="circleBorder"></div>
-        <div class="circle-full" ref="circleFull"></div>
-        <div class="start-btn" ref="startBtn" v-on:click="play">
-          <div class="full-circle th-red-bg">
-            <div class="play-icon-container">
-              <img class="play-icon" src="/src/assets/icons/play-button-icon.svg" alt="">
-            </div>
+    <video ref="videoPlayer" class="video-js"></video>
+    <div class="controls">
+      <div class="circle-border" ref="circleBorder"></div>
+      <div class="circle-full" ref="circleFull"></div>
+      <div class="start-btn" ref="startBtn" v-on:click="play">
+        <div class="full-circle th-red-bg">
+          <div class="play-icon-container">
+            <img class="play-icon" src="/src/assets/icons/play-button-icon.svg" alt="">
           </div>
         </div>
       </div>
+    </div>
+    <div class="bg-container">
+      <div class="bg grey-bg" ref="greyBg"></div>
+    </div>
   </div>
 </template>
 
@@ -47,6 +50,9 @@
         gsap.to(this.$refs.circleBorder,{width:0, height:0, left:400, top:260, duration: 0.29});
         gsap.fromTo(this.$refs.circleFull,{width:0, height:0, left:400,top:260,},{width:80, height:80, left:400-40,top:260-40, duration:0.29});
 
+
+        gsap.to(this.$refs.greyBg,{left:0, duration:0.29});
+
         //start later
         this.player.play();
       }
@@ -68,11 +74,31 @@
   $player-width:800px;
   $player-height:520px;
 
+  .bg-container{
+    width:230px;
+    height:430px;
+    position:absolute;
+    top:65px;
+    left:$player-width;
+    z-index:1;
+    overflow:hidden;
+    .bg{
+      position:relative;
+      left:230px;
+      height:100%;
+    }
+  }
+
+  .video-js{
+    z-index:2;
+  }
+
   .controls{
     position: absolute;
     width: $player-width;
     height: $player-height;
     top: 0;
+    z-index:3;
 
     .circle-full{
       position:absolute;
