@@ -151,6 +151,7 @@
 
       .item {
         font-size:14px;
+        margin: 0 22px;
       }
     }
 

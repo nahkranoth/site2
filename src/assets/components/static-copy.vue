@@ -22,7 +22,8 @@
   export default {
     name: "text-overlay",
     mounted(){
-      gsap.to(this.$refs.liveTime, {top:0, duration:1})
+      var tl = gsap.timeline();
+      tl.to(this.$refs.liveTime, {top:0, duration:1}, .8);
     }
   }
 </script>
