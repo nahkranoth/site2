@@ -16,14 +16,14 @@
         <span class="horizontal-line"></span>
         <span class="item sign-in">{{ $t("sign_in") }}</span>
         <span class="horizontal-line special"></span>
-        <span class="item shopping-cart"><span class="shopping-cart-button"><img src="/src/assets/icons/shopping-cart.png" alt=""></span></span>
+        <span class="item shopping-cart"><span class="shopping-cart-button"><img src="../icons/shopping-cart.png" alt=""></span></span>
       </span>
     </div>
 
     <hr>
 
     <div class="bottom">
-      <span class="logo-container"><img class="logo" src="/src/assets/images/logo.png" alt=""></span>
+      <span class="logo-container"><img class="logo" src="../images/logo.png" alt=""></span>
       <span class="menu gill-sans-m">
         <span class="item">{{ $t("women") }}</span>
         <span class="item">{{ $t("men") }}</span>
@@ -33,7 +33,7 @@
       </span>
       <span class="search gill-sans">
         <span class="search-input"><InputField></InputField></span>
-        <span class="search-icon"><img src="/src/assets/icons/search.png" alt=""></span>
+        <span class="search-icon"><img src="../icons/search.png" alt=""></span>
       </span>
     </div>
     <hr>

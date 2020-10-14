@@ -6,8 +6,8 @@
       <span class="t-ve" ref="tve">V E</span>
       <span class="t-dot" ref="tdot">.</span>
     </div>
-    <img class="heart-icon" v-bind:class="{ active: heartFlicker }" ref="heart" src="src/assets/icons/heart_red.svg" alt="">
-    <img class="heart-icon blue" v-bind:class="{ active: !heartFlicker }" src="src/assets/icons/heart_blue.svg" alt="">
+    <img class="heart-icon" v-bind:class="{ active: heartFlicker }" ref="heart" src="../icons/heart_red.svg" alt="">
+    <img class="heart-icon blue" v-bind:class="{ active: !heartFlicker }" src="../icons/heart_blue.svg" alt="">
 
     <div class="bottom heroic-h th-red">
 

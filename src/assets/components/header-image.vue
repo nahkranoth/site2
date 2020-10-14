@@ -1,7 +1,7 @@
 <template>
   <div class="header-image">
-    <div class="image-container top" ref="top_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
-    <div class="image-container bottom" ref="bottom_fade"><img src="/src/assets/images/headerImage.jpg" alt=""></div>
+    <div class="image-container top" ref="top_fade"><img src="../images/headerImage.jpg" alt=""></div>
+    <div class="image-container bottom" ref="bottom_fade"><img src="../images/headerImage.jpg" alt=""></div>
   </div>
 </template>
 
