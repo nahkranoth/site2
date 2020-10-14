@@ -73,7 +73,7 @@ export default {
 
   .static-copy-container{
     position:absolute;
-    margin: 162px 0 0 $side-margin;
+    margin: 152px 0 0 $side-margin;
     z-index:2;
   }
 

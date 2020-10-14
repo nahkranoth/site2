@@ -32,7 +32,7 @@
     .live-container{
       overflow: hidden;
       .live{
-        font-size:30px;
+        font-size:40px;
         top: 100px;
         position: relative;
       }
@@ -40,7 +40,10 @@
 
     .spring{
       font-size:48px;
-      margin-top:420px;
+      margin-top:402px;
+    }
+    .year{
+      font-size:48px;
     }
     .name-top{
       font-size:25px;

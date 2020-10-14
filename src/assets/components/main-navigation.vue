@@ -12,11 +12,11 @@
       <span class="pay-off caslon">{{ $t("pay_off") }}</span>
 
       <span class="menu user gill-sans-m">
-        <span class="item">{{ $t("newsletter") }}</span>
+        <span class="item newsletter">{{ $t("newsletter") }}</span>
         <span class="horizontal-line"></span>
-        <span class="item">{{ $t("sign_in") }}</span>
+        <span class="item sign-in">{{ $t("sign_in") }}</span>
         <span class="horizontal-line special"></span>
-        <span class="item"><span class="shopping-cart-button"><img src="/src/assets/icons/shopping-cart.png" alt=""></span></span>
+        <span class="item shopping-cart"><span class="shopping-cart-button"><img src="/src/assets/icons/shopping-cart.png" alt=""></span></span>
       </span>
     </div>
 
@@ -98,10 +98,11 @@
 
           &.stores{
             margin-left:5px;
+            margin-right:5px;
           }
 
           &.customer{
-
+            margin-left:4px;
           }
         }
       }
@@ -152,7 +153,10 @@
       .item {
         font-size:14px;
         margin: 0 22px;
+
       }
+
+
     }
 
     .search{
@@ -166,9 +170,13 @@
         &.search-icon{
           width: 58px;
           text-align: right;
+          left: -4px;
+          position: relative;
+          top: 1px;
         }
         &.search-input{
           text-align: right;
+          left: 60px;
         }
       }
     }
