@@ -1,4 +1,4 @@
-# cheesecake-testcase
+# cheesecake
 
 > A Vue.js project
 
