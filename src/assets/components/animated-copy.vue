@@ -18,7 +18,7 @@
 
     </div>
 
-    <div class="arm-overlay" ref="armOverlay"><img src="src/assets/images/armOVerlay.png" class="arm-overlay"></div>
+    <!--<div class="arm-overlay" ref="armOverlay"><img src="src/assets/images/armOVerlay.png" class="arm-overlay"></div>-->
 
   </div>
 </template>

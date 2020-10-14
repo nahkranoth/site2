@@ -4,10 +4,10 @@
     <div class="controls">
       <div class="circle-border" ref="circleBorder"></div>
       <div class="circle-full" ref="circleFull"></div>
-      <div class="start-btn" ref="startBtn" v-on:click="play">
+      <div class="start-btn" v-bind:class="{ hide: !playButtonVisible }" ref="startBtn" v-on:click="play">
         <div class="full-circle th-red-bg">
           <div class="play-icon-container">
-            <img class="play-icon" src="/src/assets/icons/play-button-icon.svg" alt="">
+            <img class="play-icon" src="../../icons/play-button-icon.svg" alt="">
           </div>
         </div>
       </div>
@@ -27,6 +27,8 @@
     name: "VideoPlayer",
     data() {
       return {
+        playButtonVisible:true,
+
         playerOptions: {
           muted: true,
           language: 'en',
@@ -35,7 +37,7 @@
           height:520,
           sources: [{
             type: "video/mp4",
-            src: "/src/assets/videos/test-video.mp4"
+            src: "src/assets/videos/test-video.mp4"
           }]
         }
       }
@@ -47,14 +49,24 @@
     },
     methods:{
       play(){
-        gsap.to(this.$refs.circleBorder,{width:0, height:0, left:400, top:260, duration: 0.29});
-        gsap.fromTo(this.$refs.circleFull,{width:0, height:0, left:400,top:260,},{width:80, height:80, left:400-40,top:260-40, duration:0.29});
 
-        //TODO: GlIDE in on the right scroll position
-        gsap.to(this.$refs.greyBg,{left:0, duration:0.29});
+        var tl = new gsap.timeline();
 
-        //start later
-        this.player.play();
+        tl.to(this.$refs.circleBorder,{width:0, height:0, left:398, top:260, duration: 0.16});
+        tl.set(this.$refs.circleBorder, {opacity:0});
+        tl.fromTo(this.$refs.circleFull,{width:0, height:0, left:400,top:260},{width:80, height:80, left:400-40,top:260-40, duration:0.29},1 );
+
+        tl.to(this.$refs.circleFull,{width:0, height:0, left:400,top:260,duration:.5},"+=1");
+        tl.set(this.$refs.circleFull, {opacity:0},"-=.4");
+        tl.call(()=>{
+          this.playButtonVisible = false;
+          this.player.play();
+          this.slideInBackground();
+        }, [], "-=.4");
+      },
+
+      slideInBackground(){
+        gsap.to(this.$refs.greyBg,{left:0, duration:0.5});
       }
     },
     beforeDestroy() {
@@ -124,6 +136,11 @@
       position: absolute;
       left: ceil($player-width/2 - $circle-radius/2);
       top: ceil($player-height/2 - $circle-radius/2);
+
+      &.hide{
+        display:none;
+      }
+
       .full-circle{
         height: $circle-radius;
         width: $circle-radius;
